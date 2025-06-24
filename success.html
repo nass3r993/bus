@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Purchase Success</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background: linear-gradient(135deg, #e0f7e9, #ffffff);
+            padding: 40px 20px;
+            text-align: center;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header {
+            margin-bottom: 30px;
+            animation: fadeInDown 1s ease forwards;
+        }
+
+        h2 {
+            color: #28a745;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 6px rgba(40, 167, 69, 0.5);
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            font-weight: 500;
+            animation: fadeIn 1.5s ease forwards;
+        }
+
+        pre {
+            background-color: #121212;
+            color: #0f0;
+            padding: 20px 25px;
+            border-radius: 12px;
+            display: inline-block;
+            font-size: 1.25rem;
+            max-width: 90vw;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            box-shadow: 0 8px 24px rgba(0, 255, 0, 0.2);
+            font-family: 'Source Code Pro', monospace;
+            animation: fadeIn 2s ease forwards;
+        }
+
+        .certificate-container {
+            margin-top: 30px;
+            max-width: 800px;
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            overflow: hidden;
+            animation: fadeInUp 1.8s ease forwards;
+        }
+
+        .certificate-container img {
+            width: 100%;
+            display: block;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 35px;
+            padding: 14px 28px;
+            background-color: #28a745;
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            box-shadow: 0 6px 15px rgba(40, 167, 69, 0.6);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeIn 2.2s ease forwards;
+        }
+
+        .back-link:hover {
+            background-color: #218838;
+            box-shadow: 0 8px 20px rgba(33, 136, 56, 0.8);
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h2>✅ Purchase Successful!</h2>
+    </div>
+    <p>Congratulations! Here is your flag:</p>
+    <pre>{{ flag }}</pre>
+
+    <div class="certificate-container">
+        <img src="{{ url_for('static', filename='certG.png') }}" alt="Certificate">
+    </div>
+
+    <a href="{{ url_for('index') }}" class="back-link">← Back to Shop</a>
+</body>
+</html>
